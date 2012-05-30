@@ -6,6 +6,7 @@ Group:      Applications/File
 License:    GPLv2 and GFDL
 URL:        http://www.gzip.org/
 Source0:    ftp://alpha.gnu.org/gnu/gzip/gzip-%{version}.tar.gz
+Source1001: packaging/gzip.manifest 
 Patch0:     gzip-1.3.12-openbsd-owl-tmp.patch
 Patch1:     gzip-1.3.5-zforce.patch
 Patch2:     gzip-1.3.9-stderr.patch
@@ -69,6 +70,7 @@ having the command zless available is important to be worth providing it.
 %patch9 -p1
 
 %build
+cp %{SOURCE1001} .
 export CPPFLAGS="-DHAVE_LSTAT"
 
 %configure --disable-static \
@@ -103,6 +105,7 @@ rm -f %{buildroot}/bin/uncompress
 
 
 %files
+%manifest gzip.manifest
 %defattr(-,root,root,-)
 /bin/*
 %{_bindir}/gzip
@@ -119,6 +122,7 @@ rm -f %{buildroot}/bin/uncompress
 
 
 %files -n zless
+%manifest gzip.manifest
 %defattr(-,root,root,-)
 %{_bindir}/zless
 
