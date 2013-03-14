@@ -6,7 +6,7 @@ Group:      Applications/File
 License:    GPLv2 and GFDL
 URL:        http://www.gzip.org/
 Source0:    ftp://alpha.gnu.org/gnu/gzip/gzip-%{version}.tar.gz
-Source1001: packaging/gzip.manifest 
+Source1001: packaging/gzip.manifest
 Patch0:     gzip-1.3.12-openbsd-owl-tmp.patch
 Patch1:     gzip-1.3.5-zforce.patch
 Patch2:     gzip-1.3.9-stderr.patch
