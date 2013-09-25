@@ -105,6 +105,10 @@ do
 	done;
 done
 
+# license
+mkdir -p %{buildroot}/usr/share/license
+cp COPYING %{buildroot}/usr/share/license/%{name}
+
 %docs_package
 
 %files
@@ -123,7 +127,7 @@ done
 %{_bindir}/zfgrep
 %{_bindir}/zgrep
 %{_bindir}/zmore
-
+/usr/share/license/%{name}
 
 %files -n zless
 %manifest gzip.manifest
