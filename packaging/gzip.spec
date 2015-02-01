@@ -9,6 +9,7 @@ Source0:    ftp://alpha.gnu.org/gnu/gzip/gzip-%{version}.tar.gz
 Source1001: packaging/gzip.manifest
 Requires:   /bin/mktemp
 
+
 %description
 The gzip package contains the popular GNU gzip data compression
 program. Gzipped files have a .gz extension.
