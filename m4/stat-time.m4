@@ -1,6 +1,6 @@
 # Checks for stat-related time functions.
 
-# Copyright (C) 1998-1999, 2001, 2003, 2005-2007, 2009 Free Software
+# Copyright (C) 1998, 1999, 2001, 2003, 2005, 2006, 2007 Free Software
 # Foundation, Inc.
 
 # This file is free software; the Free Software Foundation
@@ -26,8 +26,8 @@ AC_DEFUN([gl_STAT_TIME],
   AC_CHECK_MEMBERS([struct stat.st_atim.tv_nsec],
     [AC_CACHE_CHECK([whether struct stat.st_atim is of type struct timespec],
        [ac_cv_typeof_struct_stat_st_atim_is_struct_timespec],
-       [AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
-	  [[
+       [AC_TRY_COMPILE(
+	  [
 	    #include <sys/types.h>
 	    #include <sys/stat.h>
 	    #if HAVE_SYS_TIME_H
@@ -36,14 +36,14 @@ AC_DEFUN([gl_STAT_TIME],
 	    #include <time.h>
 	    struct timespec ts;
 	    struct stat st;
-	  ]],
-	  [[
+	  ],
+	  [
 	    st.st_atim = ts;
-	  ]])],
+	  ],
 	  [ac_cv_typeof_struct_stat_st_atim_is_struct_timespec=yes],
 	  [ac_cv_typeof_struct_stat_st_atim_is_struct_timespec=no])])
      if test $ac_cv_typeof_struct_stat_st_atim_is_struct_timespec = yes; then
-       AC_DEFINE([TYPEOF_STRUCT_STAT_ST_ATIM_IS_STRUCT_TIMESPEC], [1],
+       AC_DEFINE([TYPEOF_STRUCT_STAT_ST_ATIM_IS_STRUCT_TIMESPEC], 1,
 	 [Define to 1 if the type of the st_atim member of a struct stat is
 	  struct timespec.])
      fi],

@@ -1,11 +1,11 @@
 /* tailor.h -- target dependent definitions
 
-   Copyright (C) 1997-1999, 2002, 2006, 2009 Free Software Foundation, Inc.
+   Copyright (C) 1997, 1998, 1999, 2002, 2006 Free Software Foundation, Inc.
    Copyright (C) 1992-1993 Jean-loup Gailly
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 3, or (at your option)
+   the Free Software Foundation; either version 2, or (at your option)
    any later version.
 
    This program is distributed in the hope that it will be useful,
@@ -20,6 +20,8 @@
 /* The target dependent definitions should be defined here only.
  * The target dependent functions should be defined in tailor.c.
  */
+
+/* $Id: tailor.h,v 1.5 2006/12/07 06:58:13 eggert Exp $ */
 
 #if defined(__MSDOS__) && !defined(MSDOS)
 #  define MSDOS

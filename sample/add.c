@@ -6,9 +6,7 @@
    in the stream.  See sub.c for what the filtering is and what it's
    good for. */
 
-#include <config.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 #define MAGIC1    'S' /* sub data */
 #define MAGIC2    26  /* ^Z */
@@ -26,18 +24,18 @@ int main()
   if (getchar() != MAGIC1 || getchar() != MAGIC2)
   {
     fputs("add: input stream not made by sub\n", stderr);
-    exit(EXIT_FAILURE);
+    exit(1);
   }
 
   /* get number of differences from data */
   if ((n = getchar()) == EOF || (i = getchar()) == EOF) {
     fputs("add: unexpected end of file\n", stderr);
-    exit(EXIT_FAILURE);
+    exit(1);
   }
   n += (i<<8);
   if (n <= 0 || n > MAX_DIST) {
     fprintf(stderr, "add: incorrect distance %d\n", n);
-    exit(EXIT_FAILURE);
+    exit(1);
   }
 
   /* initialize last byte */
@@ -54,6 +52,6 @@ int main()
     if (i == n)			/* cycle on n differences */
       i = 0;
   }
-  exit(EXIT_SUCCESS);
+  exit(0);
   return 0;			/* avoid warning */
 }

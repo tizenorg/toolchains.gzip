@@ -3,6 +3,10 @@
  * written by Haruhiko Okumura.
  */
 
+#ifdef RCSID
+static char rcsid[] = "$Id: unlzh.c,v 1.4 2006/11/20 08:40:34 eggert Exp $";
+#endif
+
 #include <config.h>
 #include <stdio.h>
 

@@ -1,11 +1,11 @@
 /* match.s -- optional optimized asm version of longest match in deflate.c
 
-   Copyright (C) 2002, 2006, 2009 Free Software Foundation, Inc.
+   Copyright (C) 2002, 2006 Free Software Foundation, Inc.
    Copyright (C) 1992-1993 Jean-loup Gailly
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 3, or (at your option)
+   the Free Software Foundation; either version 2, or (at your option)
    any later version.
 
    This program is distributed in the hope that it will be useful,
@@ -28,7 +28,7 @@
  * David Mosberger-Tang <davidm@hpl.hp.com>.
  */
 
-#include <config.h>
+/* $Id: match.c,v 1.1 2006/11/20 08:40:34 eggert Exp $ */
 
 /* Preprocess with -DNO_UNDERLINE if your C compiler does not prefix
  * external symbols with an underline character '_'.

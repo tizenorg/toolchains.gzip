@@ -1,12 +1,12 @@
 #!/bin/sh
 # sh is buggy on RS/6000 AIX 3.2. Replace above line with #!/bin/ksh
 
-# Copyright (C) 1998, 2002, 2006, 2007, 2009 Free Software Foundation
+# Copyright (C) 1998, 2002, 2006, 2007 Free Software Foundation
 # Copyright (C) 1993 Jean-loup Gailly
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 3 of the License, or
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 
 # This program is distributed in the hope that it will be useful,
@@ -18,11 +18,7 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-bindir=@bindir@
-case $1 in
---__bindir) bindir=${2?}; shift; shift;;
-esac
-PATH=$bindir:$PATH
+PATH=BINDIR:$PATH
 
 case $1 in
   --__cmp) shift
@@ -31,7 +27,7 @@ case $1 in
 esac
 
 version="z$prog (gzip) @VERSION@
-Copyright (C) 2007, 2009 Free Software Foundation, Inc.
+Copyright (C) 2007 Free Software Foundation, Inc.
 This is free software.  You may redistribute copies of it under the terms of
 the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
 There is NO WARRANTY, to the extent permitted by law.
@@ -108,14 +104,12 @@ elif test $# -eq 2; then
 			  exec 4>&1
 			  (gzip -cdfq -- "$1" 4>&-; echo $? >&4) 3>&- |
 			    ( (gzip -cdfq -- "$2" 4>&-; echo $? >&4) 3>&- 5<&- </dev/null |
-			       eval "$cmp" /dev/fd/5 - >&3) 5<&0
+			       eval "$cmp" /dev/fd/5 -) 5<&0
 			)
-			cmp_status=$?
 			case $gzip_status in
 			  *[1-9]*) gzip_status=1;;
 			  *) gzip_status=0;;
 			esac
-			(exit $cmp_status)
 		    else
 			F=`expr "/$2" : '.*/\(.*\)[-.][zZtga]*$'` || F=$prog
 			tmp=

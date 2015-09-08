@@ -18,6 +18,8 @@
 ; only if the arrays are guaranteed to have zero offset (allocated by
 ; halloc). We also require SS==DS. This is satisfied for MSC but not Turbo C.
 
+; $Id: match.asm,v 0.6 1993/01/21 18:49:05 jloup Exp $
+
         name    match
 
 ifndef DYN_ALLOC
@@ -231,7 +233,7 @@ endif
 maxmatch:                               ; come here if maximum match
         cmpsb                           ; increment si and di
         jmp     mismatch                ; force match_length = MAX_LENGTH
-
+        
 _longest_match  endp
 
 _TEXT   ends

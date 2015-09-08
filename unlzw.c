@@ -7,6 +7,10 @@
  * to accommodate in-memory decompression.
  */
 
+#ifdef RCSID
+static char rcsid[] = "$Id: unlzw.c,v 1.5 2006/12/11 18:54:39 eggert Exp $";
+#endif
+
 #include <config.h>
 #include "tailor.h"
 

@@ -33,9 +33,7 @@
       gunzip < double.data.sgz | add > double.data
 */
 
-#include <config.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 #define MAGIC1    'S' /* sub data */
 #define MAGIC2    26  /* ^Z */
@@ -56,7 +54,7 @@ int main(argc, argv)
   if (argc > 2)
   {
     fputs("sub: only one argument needed--# of differences\n", stderr);
-    exit(EXIT_FAILURE);
+    exit(1);
   }
   if (argc > 1)
     n = atoi(argv[1]);
@@ -64,7 +62,7 @@ int main(argc, argv)
   if (n < 0) n = -n;	/* tolerate "sub -2" */
   if (n == 0 || n > MAX_DIST) {
     fputs("sub: incorrect distance\n", stderr);
-    exit(EXIT_FAILURE);
+    exit(1);
   }
 
   /* initialize last byte */
@@ -85,6 +83,6 @@ int main(argc, argv)
     if (i == n)				/* cycle on n differences */
       i = 0;
   }
-  exit(EXIT_SUCCESS);
+  exit(0);
   return 0; /* avoid warning */
 }

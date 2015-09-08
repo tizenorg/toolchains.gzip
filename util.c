@@ -1,12 +1,12 @@
 /* util.c -- utility functions for gzip support
 
-   Copyright (C) 1997-1999, 2001-2002, 2006, 2009 Free Software Foundation,
-   Inc.
+   Copyright (C) 1997, 1998, 1999, 2001, 2002, 2006 Free Software
+   Foundation, Inc.
    Copyright (C) 1992-1993 Jean-loup Gailly
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 3, or (at your option)
+   the Free Software Foundation; either version 2, or (at your option)
    any later version.
 
    This program is distributed in the hope that it will be useful,
@@ -17,6 +17,10 @@
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software Foundation,
    Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  */
+
+#ifdef RCSID
+static char rcsid[] = "$Id: util.c,v 1.6 2006/12/11 18:54:39 eggert Exp $";
+#endif
 
 #include <config.h>
 #include <ctype.h>
@@ -388,7 +392,7 @@ char *add_envopt(argcp, argvp, env)
     /* Allocate the new argv array, with an extra element just in case
      * the original arg list did not end with a NULL.
      */
-    nargv = xcalloc (*argcp + 1, sizeof (char *));
+    nargv = (char **) xcalloc (*argcp + 1, sizeof (char *));
     oargv  = *argvp;
     *argvp = nargv;
 

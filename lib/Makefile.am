@@ -1,10 +1,10 @@
 # Make gzip/lib				-*-Makefile-*-
 
-# Copyright (C) 2006, 2009 Free Software Foundation, Inc.
+# Copyright (C) 2006 Free Software Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 3 of the License, or
+# the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 
 # This program is distributed in the hope that it will be useful,
@@ -25,7 +25,7 @@ libgzip_a_DEPENDENCIES += $(LIBOBJS)
 match.$(OBJEXT): match.c
 	cp $(srcdir)/match.c _match.S
 	$(CPP) $(CPPFLAGS) $(ASCPPFLAGS) _match.S > _match.i
-	$(ASCPPPOST) < _match.i > match_.s
+	@ASCPPPOST@ < _match.i > match_.s
 	$(CC) $(CPPFLAGS) $(CFLAGS) $(ASFLAGS_config) -c match_.s
 	mv match_.$(OBJEXT) $@
 	rm -f _match.S _match.i match_.s

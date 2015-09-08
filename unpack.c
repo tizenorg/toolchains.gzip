@@ -1,11 +1,11 @@
 /* unpack.c -- decompress files in pack format.
 
-   Copyright (C) 1997, 1999, 2006, 2009 Free Software Foundation, Inc.
+   Copyright (C) 1997, 1999, 2006 Free Software Foundation, Inc.
    Copyright (C) 1992-1993 Jean-loup Gailly
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 3, or (at your option)
+   the Free Software Foundation; either version 2, or (at your option)
    any later version.
 
    This program is distributed in the hope that it will be useful,
@@ -16,6 +16,10 @@
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software Foundation,
    Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  */
+
+#ifdef RCSID
+static char rcsid[] = "$Id: unpack.c,v 1.4 2006/11/20 08:40:34 eggert Exp $";
+#endif
 
 #include <config.h>
 #include "tailor.h"

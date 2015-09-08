@@ -1,6 +1,9 @@
 /* Not copyrighted 1990 Mark Adler */
 
-#include <config.h>
+#ifndef lint
+static char rcsid[] = "$Id: makecrc.c,v 0.6 1993/05/28 07:42:59 jloup Exp $";
+#endif
+
 #include <stdio.h>
 
 main()

@@ -1,12 +1,13 @@
 # Configure template for gzip.
 
-# Copyright (C) 1999-2002, 2006-2007, 2009 Free Software Foundation, Inc.
+# Copyright (C) 1999, 2000, 2001, 2002, 2006, 2007 Free Software
+# Foundation, Inc.
 
 # Copyright (C) 1992-1993 Jean-loup Gailly
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 3, or (at your option)
+# the Free Software Foundation; either version 2, or (at your option)
 # any later version.
 
 # This program is distributed in the hope that it will be useful,
@@ -20,15 +21,11 @@
 # 02111-1307, USA.
 
 AC_PREREQ([2.60])
-AC_INIT([gzip],
-	m4_esyscmd([build-aux/git-version-gen .tarball-version]),
-	[bug-gzip@gnu.org])
-
+AC_INIT([gzip], [1.3.12], [bug-gzip@gnu.org])
 AC_CONFIG_SRCDIR(gzip.c)
 AC_CONFIG_AUX_DIR(build-aux)
 AC_CONFIG_HEADERS([lib/config.h:lib/config.hin])
-AM_INIT_AUTOMAKE([1.11 dist-xz color-tests parallel-tests])
-AM_SILENT_RULES([yes]) # make --enable-silent-rules the default.
+AM_INIT_AUTOMAKE([gnits])
 
 AC_PROG_CC_STDC
 AM_PROG_CC_C_O
@@ -108,6 +105,8 @@ AC_HEADER_DIRENT
 AC_TYPE_SIGNAL
 AC_TYPE_SIZE_T
 AC_TYPE_OFF_T
+
+AC_PREFIX_PROGRAM(gzip)
 
 AC_CONFIG_FILES([Makefile doc/Makefile lib/Makefile])
 AC_OUTPUT

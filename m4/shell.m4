@@ -1,9 +1,9 @@
 # Check for a working shell.
 
-# Copyright (C) 2000-2001, 2007, 2009 Free Software Foundation, Inc.
+# Copyright (C) 2000, 2001, 2007 Free Software Foundation, Inc.
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 3, or (at your option)
+# the Free Software Foundation; either version 2, or (at your option)
 # any later version.
 
 # This program is distributed in the hope that it will be useful,
@@ -37,15 +37,15 @@ AC_DEFUN([AC_PROG_SHELL],
       ac_cv_path_shell=no
 
       case $SHELL in
-      (/*)
+      /*)
 	rm -f conftest.c
 	if ("$SHELL" -c "$ac_command") 2>/dev/null; then
 	  ac_cv_path_shell=$SHELL
-	fi
+	fi;;
       esac
 
       case $ac_cv_path_shell in
-      (no)
+      no)
 	# Prefer shells that are more likely to be installed in the
 	# same place on all hosts of this platform.  Therefore, prefer
 	# shells in /bin and /usr/bin to shells in the installer's
@@ -57,7 +57,7 @@ AC_DEFUN([AC_PROG_SHELL],
 	do
 	  IFS=$as_save_IFS
 	  case $as_dir in
-	  (/*)
+	  /*)
 	    for ac_base in sh bash ksh sh5; do
 	      rm -f conftest.c
 	      if ("$as_dir/$ac_base" -c "$ac_command") 2>/dev/null; then
@@ -66,11 +66,11 @@ AC_DEFUN([AC_PROG_SHELL],
 	      fi
 	    done
 	    case $ac_cv_path_shell in
-	    (/*) break
-	    esac
+	    /*) break;;
+	    esac;;
 	  esac
 	done
-	rm -f conftest.c
+	rm -f conftest.c;;
       esac])
    AC_MSG_RESULT($ac_cv_path_shell)
    SHELL=$ac_cv_path_shell

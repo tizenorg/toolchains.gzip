@@ -8,7 +8,6 @@
  * This file contains Amiga specific functions for gzip.
  */
 
-#include <config.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -116,7 +115,7 @@ void _expand_args (oargc, oargv)
               {
                 expand_next_file (NULL);
                 fprintf (stderr,"Too many files.\n");
-                exit (EXIT_FAILURE);
+                exit (20);
               }
             else
               {
@@ -134,7 +133,7 @@ void _expand_args (oargc, oargv)
         if (argc >= MAXARGS)
           {
             fprintf (stderr,"Too many files.\n");
-            exit (EXIT_FAILURE);
+            exit (20);
           }
         else
           {
@@ -146,7 +145,7 @@ void _expand_args (oargc, oargv)
   *oargv = argv;
   if (no_match_at_all && contains_wildcards) {
     fprintf (stderr,"No match.\n");
-    exit (EXIT_FAILURE);
+    exit (20);
   }
 }
 

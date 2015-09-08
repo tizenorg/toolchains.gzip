@@ -1,19 +1,20 @@
 /* Error handler for noninteractive utilities
-   Copyright (C) 1990-1998, 2000-2007, 2009 Free Software Foundation, Inc.
+   Copyright (C) 1990-1998, 2000-2005, 2006 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
-   This program is free software: you can redistribute it and/or modify
+   This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 3 of the License, or
-   (at your option) any later version.
+   the Free Software Foundation; either version 2, or (at your option)
+   any later version.
 
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
 
-   You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   You should have received a copy of the GNU General Public License along
+   with this program; if not, write to the Free Software Foundation,
+   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  */
 
 /* Written by David MacKenzie <djm@gnu.ai.mit.edu>.  */
 
@@ -30,7 +31,6 @@
 
 #if !_LIBC && ENABLE_NLS
 # include "gettext.h"
-# define _(msgid) gettext (msgid)
 #endif
 
 #ifdef _LIBC
@@ -84,8 +84,6 @@ extern void __error_at_line (int status, int errnum, const char *file_name,
 # include <bits/libc-lock.h>
 
 #else /* not _LIBC */
-
-# include <fcntl.h>
 
 # if !HAVE_DECL_STRERROR_R && STRERROR_R_CHAR_P
 #  ifndef HAVE_DECL_STRERROR_R
@@ -238,12 +236,6 @@ error (int status, int errnum, const char *message, ...)
 		   0);
 #endif
 
-#if !_LIBC && defined F_GETFL
-  /* POSIX states that fflush (stdout) after fclose is unspecified; it
-     is safe in glibc, but not on all other platforms.  fflush (NULL)
-     is always defined, but too draconian.  */
-  if (0 <= fcntl (1, F_GETFL))
-#endif
   fflush (stdout);
 #ifdef _LIBC
   _IO_flockfile (stderr);
@@ -303,12 +295,6 @@ error_at_line (int status, int errnum, const char *file_name,
 		   0);
 #endif
 
-#if !_LIBC && defined F_GETFL
-  /* POSIX states that fflush (stdout) after fclose is unspecified; it
-     is safe in glibc, but not on all other platforms.  fflush (NULL)
-     is always defined, but too draconian.  */
-  if (0 <= fcntl (1, F_GETFL))
-#endif
   fflush (stdout);
 #ifdef _LIBC
   _IO_flockfile (stderr);

@@ -5,7 +5,7 @@
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 3, or (at your option)
+# the Free Software Foundation; either version 2, or (at your option)
 # any later version.
 
 # This program is distributed in the hope that it will be useful,
@@ -24,7 +24,7 @@ CFLAGS = -m68020 -m68881 -O2
 #CFLAGS = -m68000 -O2
 #for the 68000, set below: OBJA=
 CPPFLAGS = -Dmc68020
-LDFLAGS =
+LDFLAGS = 
 O = .o
 
 SRCS = gzip.c zip.c deflate.c trees.c bits.c unzip.c inflate.c util.c crypt.c\

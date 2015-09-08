@@ -1,12 +1,11 @@
 /* revision.h -- define the version number
 
-   Copyright (C) 1998-1999, 2001-2002, 2006, 2009 Free Software Foundation,
-   Inc.
+   Copyright (C) 1998, 1999, 2001, 2002, 2006 Free Software Foundation, Inc.
    Copyright (C) 1992-1993 Jean-loup Gailly.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 3, or (at your option)
+   the Free Software Foundation; either version 2, or (at your option)
    any later version.
 
    This program is distributed in the hope that it will be useful,
@@ -25,3 +24,5 @@
 #ifdef LZW
 #  undef LZW
 #endif
+
+/* $Id: revision.h,v 1.4 2006/11/20 08:40:33 eggert Exp $ */

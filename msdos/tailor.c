@@ -8,9 +8,12 @@
  * It should be kept to a minimum.
  */
 
-#include <config.h>
 #include "tailor.h"
 #include "gzip.h"
+
+#ifndef lint
+static char rcsid[] = "$Id: tailor.c,v 0.8 1993/02/24 18:24:54 jloup Exp $";
+#endif
 
 #ifdef __TURBOC__
 

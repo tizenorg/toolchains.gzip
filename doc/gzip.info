@@ -1,53 +1,47 @@
-This is gzip.info, produced by makeinfo version 4.13 from gzip.texi.
+This is gzip.info, produced by makeinfo version 4.8 from gzip.texi.
 
-This manual is for GNU Gzip (version 1.3.14, 28 September 2009), and
+   This manual is for Gzip (version 1.3.12, 5 February 2007), and
 documents commands for compressing and decompressing data.
 
-   Copyright (C) 1998-1999, 2001-2002, 2006-2007, 2009 Free Software
+   Copyright (C) 1998, 1999, 2001, 2002, 2006, 2007 Free Software
 Foundation, Inc.
 
    Copyright (C) 1992, 1993 Jean-loup Gailly
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
-     Version 1.3 or any later version published by the Free Software
+     Version 1.2 or any later version published by the Free Software
      Foundation; with no Invariant Sections, with no Front-Cover Texts,
      and with no Back-Cover Texts.  A copy of the license is included
      in the section entitled "GNU Free Documentation License".
 
-INFO-DIR-SECTION Compression
+INFO-DIR-SECTION Utilities
 START-INFO-DIR-ENTRY
-* Gzip: (gzip).                 General (de)compression of files (lzw).
+* Gzip: (gzip).                 The gzip command for compressing files.
 END-INFO-DIR-ENTRY
 
 INFO-DIR-SECTION Individual utilities
 START-INFO-DIR-ENTRY
-* gunzip: (gzip)Overview.                       Decompression.
-* gzexe: (gzip)Overview.                        Compress executables.
-* zcat: (gzip)Overview.                         Decompression to stdout.
-* zdiff: (gzip)Overview.                        Compare compressed files.
-* zforce: (gzip)Overview.                       Force .gz extension on files.
-* zgrep: (gzip)Overview.                        Search compressed files.
-* zmore: (gzip)Overview.                        Decompression output by pages.
+* gzip: (gzip)Invoking gzip.                    Compress files.
 END-INFO-DIR-ENTRY
 
 
 File: gzip.info,  Node: Top,  Next: Overview,  Up: (dir)
 
-GNU Gzip: General file (de)compression
-**************************************
+Compressing Files
+*****************
 
-This manual is for GNU Gzip (version 1.3.14, 28 September 2009), and
+This manual is for Gzip (version 1.3.12, 5 February 2007), and
 documents commands for compressing and decompressing data.
 
-   Copyright (C) 1998-1999, 2001-2002, 2006-2007, 2009 Free Software
+   Copyright (C) 1998, 1999, 2001, 2002, 2006, 2007 Free Software
 Foundation, Inc.
 
    Copyright (C) 1992, 1993 Jean-loup Gailly
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
-     Version 1.3 or any later version published by the Free Software
+     Version 1.2 or any later version published by the Free Software
      Foundation; with no Invariant Sections, with no Front-Cover Texts,
      and with no Back-Cover Texts.  A copy of the license is included
      in the section entitled "GNU Free Documentation License".
@@ -61,8 +55,8 @@ Foundation, Inc.
 * Environment::		The `GZIP' environment variable
 * Tapes::               Using `gzip' on tapes.
 * Problems::		Reporting bugs.
-* GNU Free Documentation License:: Copying and sharing this manual.
-* Concept index::       Index of concepts.
+* Copying This Manual:: How to make copies of this manual.
+* Concept Index::	Index of concepts.
 
 
 File: gzip.info,  Node: Overview,  Next: Sample,  Prev: Top,  Up: Top
@@ -104,13 +98,12 @@ compressed file is not suitable for its file system, a new name is
 constructed from the original one to make it legal.
 
    `gunzip' takes a list of files on its command line and replaces each
-file whose name ends with `.gz', `.z' `-gz', `-z', or `_z' (ignoring
-case) and which begins with the correct magic number with an
-uncompressed file without the original extension.  `gunzip' also
-recognizes the special extensions `.tgz' and `.taz' as shorthands for
-`.tar.gz' and `.tar.Z' respectively.  When compressing, `gzip' uses the
-`.tgz' extension if necessary instead of truncating a file with a `.tar'
-extension.
+file whose name ends with `.gz', `.z', `.Z', `-gz', `-z' or `_z' and
+which begins with the correct magic number with an uncompressed file
+without the original extension.  `gunzip' also recognizes the special
+extensions `.tgz' and `.taz' as shorthands for `.tar.gz' and `.tar.Z'
+respectively.  When compressing, `gzip' uses the `.tgz' extension if
+necessary instead of truncating a file with a `.tar' extension.
 
    `gunzip' can currently decompress files created by `gzip', `zip',
 `compress' or `pack'.  The detection of the input format is automatic.
@@ -163,7 +156,7 @@ Format Specification version 1.3, Internet RFC 1951
 
 File: gzip.info,  Node: Sample,  Next: Invoking gzip,  Prev: Overview,  Up: Top
 
-2 Sample output
+2 Sample Output
 ***************
 
 Here are some realistic examples of running `gzip'.
@@ -451,7 +444,7 @@ of `tar') is used for reading and writing compressed data on tapes.
 (This example assumes you are using the GNU version of `tar'.)
 
 
-File: gzip.info,  Node: Problems,  Next: GNU Free Documentation License,  Prev: Tapes,  Up: Top
+File: gzip.info,  Node: Problems,  Next: Copying This Manual,  Prev: Tapes,  Up: Top
 
 7 Reporting Bugs
 ****************
@@ -463,15 +456,25 @@ operating system, the compiler used to compile `gzip', a description of
 the bug behavior, and the input to `gzip' that triggered the bug.
 
 
-File: gzip.info,  Node: GNU Free Documentation License,  Next: Concept index,  Prev: Problems,  Up: Top
+File: gzip.info,  Node: Copying This Manual,  Next: Concept Index,  Prev: Problems,  Up: Top
 
-Appendix A GNU Free Documentation License
-*****************************************
+Appendix A Copying This Manual
+******************************
 
-                     Version 1.3, 3 November 2008
+* Menu:
 
-     Copyright (C) 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.
-     `http://fsf.org/'
+* GNU Free Documentation License::  License for copying this manual.
+
+
+File: gzip.info,  Node: GNU Free Documentation License,  Up: Copying This Manual
+
+A.1 GNU Free Documentation License
+==================================
+
+                      Version 1.2, November 2002
+
+     Copyright (C) 2000,2001,2002 Free Software Foundation, Inc.
+     51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA
 
      Everyone is permitted to copy and distribute verbatim copies
      of this license document, but changing it is not allowed.
@@ -572,9 +575,6 @@ Appendix A GNU Free Documentation License
      works in formats which do not have any title page as such, "Title
      Page" means the text near the most prominent appearance of the
      work's title, preceding the beginning of the body of the text.
-
-     The "publisher" means any person or entity that distributes copies
-     of the Document to the public.
 
      A section "Entitled XYZ" means a named subunit of the Document
      whose title either is precisely XYZ or contains XYZ in parentheses
@@ -841,29 +841,12 @@ Appendix A GNU Free Documentation License
   9. TERMINATION
 
      You may not copy, modify, sublicense, or distribute the Document
-     except as expressly provided under this License.  Any attempt
-     otherwise to copy, modify, sublicense, or distribute it is void,
-     and will automatically terminate your rights under this License.
-
-     However, if you cease all violation of this License, then your
-     license from a particular copyright holder is reinstated (a)
-     provisionally, unless and until the copyright holder explicitly
-     and finally terminates your license, and (b) permanently, if the
-     copyright holder fails to notify you of the violation by some
-     reasonable means prior to 60 days after the cessation.
-
-     Moreover, your license from a particular copyright holder is
-     reinstated permanently if the copyright holder notifies you of the
-     violation by some reasonable means, this is the first time you have
-     received notice of violation of this License (for any work) from
-     that copyright holder, and you cure the violation prior to 30 days
-     after your receipt of the notice.
-
-     Termination of your rights under this section does not terminate
-     the licenses of parties who have received copies or rights from
-     you under this License.  If your rights have been terminated and
-     not permanently reinstated, receipt of a copy of some or all of
-     the same material does not give you any rights to use it.
+     except as expressly provided for under this License.  Any other
+     attempt to copy, modify, sublicense or distribute the Document is
+     void, and will automatically terminate your rights under this
+     License.  However, parties who have received copies, or rights,
+     from you under this License will not have their licenses
+     terminated so long as such parties remain in full compliance.
 
  10. FUTURE REVISIONS OF THIS LICENSE
 
@@ -881,41 +864,7 @@ Appendix A GNU Free Documentation License
      published (not as a draft) by the Free Software Foundation.  If
      the Document does not specify a version number of this License,
      you may choose any version ever published (not as a draft) by the
-     Free Software Foundation.  If the Document specifies that a proxy
-     can decide which future versions of this License can be used, that
-     proxy's public statement of acceptance of a version permanently
-     authorizes you to choose that version for the Document.
-
- 11. RELICENSING
-
-     "Massive Multiauthor Collaboration Site" (or "MMC Site") means any
-     World Wide Web server that publishes copyrightable works and also
-     provides prominent facilities for anybody to edit those works.  A
-     public wiki that anybody can edit is an example of such a server.
-     A "Massive Multiauthor Collaboration" (or "MMC") contained in the
-     site means any set of copyrightable works thus published on the MMC
-     site.
-
-     "CC-BY-SA" means the Creative Commons Attribution-Share Alike 3.0
-     license published by Creative Commons Corporation, a not-for-profit
-     corporation with a principal place of business in San Francisco,
-     California, as well as future copyleft versions of that license
-     published by that same organization.
-
-     "Incorporate" means to publish or republish a Document, in whole or
-     in part, as part of another Document.
-
-     An MMC is "eligible for relicensing" if it is licensed under this
-     License, and if all works that were first published under this
-     License somewhere other than this MMC, and subsequently
-     incorporated in whole or in part into the MMC, (1) had no cover
-     texts or invariant sections, and (2) were thus incorporated prior
-     to November 1, 2008.
-
-     The operator of an MMC Site may republish an MMC contained in the
-     site under CC-BY-SA on the same site at any time before August 1,
-     2009, provided the MMC is eligible for relicensing.
-
+     Free Software Foundation.
 
 ADDENDUM: How to use this License for your documents
 ====================================================
@@ -926,7 +875,7 @@ notices just after the title page:
 
        Copyright (C)  YEAR  YOUR NAME.
        Permission is granted to copy, distribute and/or modify this document
-       under the terms of the GNU Free Documentation License, Version 1.3
+       under the terms of the GNU Free Documentation License, Version 1.2
        or any later version published by the Free Software Foundation;
        with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
        Texts.  A copy of the license is included in the section entitled ``GNU
@@ -949,9 +898,9 @@ free software license, such as the GNU General Public License, to
 permit their use in free software.
 
 
-File: gzip.info,  Node: Concept index,  Prev: GNU Free Documentation License,  Up: Top
+File: gzip.info,  Node: Concept Index,  Prev: Copying This Manual,  Up: Top
 
-Appendix B Concept index
+Appendix B Concept Index
 ************************
 
  [index ]
@@ -960,6 +909,8 @@ Appendix B Concept index
 * bugs:                                  Problems.              (line 6)
 * concatenated files:                    Advanced usage.        (line 6)
 * Environment:                           Environment.           (line 6)
+* FDL, GNU Free Documentation License:   GNU Free Documentation License.
+                                                                (line 6)
 * invoking:                              Invoking gzip.         (line 6)
 * options:                               Invoking gzip.         (line 6)
 * overview:                              Overview.              (line 6)
@@ -969,15 +920,16 @@ Appendix B Concept index
 
 
 Tag Table:
-Node: Top1473
-Node: Overview2685
-Node: Sample7893
-Node: Invoking gzip9829
-Node: Advanced usage14821
-Node: Environment16408
-Node: Tapes16973
-Node: Problems17990
-Node: GNU Free Documentation License18460
-Node: Concept index43628
+Node: Top1018
+Node: Overview2164
+Node: Sample7362
+Node: Invoking gzip9298
+Node: Advanced usage14290
+Node: Environment15877
+Node: Tapes16442
+Node: Problems17459
+Node: Copying This Manual17918
+Node: GNU Free Documentation License18156
+Node: Concept Index40552
 
 End Tag Table
