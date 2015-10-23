@@ -21,7 +21,7 @@ very commonly used data compression program.
 
 %package -n zless
 Summary:    file perusal filter for crt viewing of compressed text
-License:    GPLv2
+License:    GPL-2.0+
 Group:      Applications/File
 Requires:   %{name} = %{version}-%{release}
 Requires:   /usr/bin/less
